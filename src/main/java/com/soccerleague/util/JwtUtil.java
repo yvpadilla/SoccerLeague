@@ -72,7 +72,7 @@ public class JwtUtil {
 		// No expiration
 		return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
 		// Expiration in 1000 years after creation		
-				.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24 * 365 * 1000 ))	
+				.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24 * 365 ))	
 				.signWith(SignatureAlgorithm.HS256, SECRET_KEY).compact();
 	}
 	
